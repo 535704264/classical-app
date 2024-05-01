@@ -7,7 +7,7 @@
               background-color="#545c64"
               text-color="#fff"
               active-text-color="#ffd04b">
-      <h3>通用后台管理系统</h3>
+      <h3>{{ isCollapse ? '后台' : '通用后台管理系统' }}</h3>
       <!-- 递归动态菜单组件 -->
       <multi-menu :data="menuData"></multi-menu>
   </el-menu>
@@ -17,7 +17,7 @@ import MultiMenu from "../components/MultiMenu.vue";
 export default {
   data() {
     return {
-      isCollapse: false,
+      // isCollapse: false,
       menuData: [
         {
           path: '/',
@@ -100,7 +100,10 @@ export default {
     MultiMenu // 注册多级
   },
   computed: {
-
+    isCollapse() {
+      // 菜单折叠
+      return this.$store.state.tab.isCollapse
+    }
   }
 }
 </script>
@@ -124,5 +127,7 @@ export default {
 
   border-right: none;
 }
+
+
 
 </style>

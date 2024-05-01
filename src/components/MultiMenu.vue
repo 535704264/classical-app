@@ -15,6 +15,7 @@
         <!-- 递归自己调用自己 -->
         <multi-menu :data="item.children"></multi-menu>
       </el-submenu>
+
       <!-- 情况二：没子集的情况： -->
       <el-menu-item :key="index" v-else :index="item.path" @click="clickMenu(item)">
         <i :class="`el-icon-${item.icon}`"></i>
@@ -49,7 +50,17 @@ const props = defineProps( {
       type: Array,
       default: [],
     },
-  // 注意： 在template标签上使用v-for，:key="index"不能写在template标签上，因为其标签不会被渲染，会引起循环错误
 });
 </script>
+
+<style lang="less" >
+// 折叠后隐藏文字
+.el-menu--collapse  .el-submenu__title span{
+  display: none;
+}
+// 折叠后隐藏箭头
+.el-menu--collapse  .el-submenu__title  .el-submenu__icon-arrow{
+  display: none;
+}
+</style>
 
