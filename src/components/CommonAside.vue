@@ -62,7 +62,7 @@ export default {
           icon: 'location',
           children: [
             {
-              path: '/page1',
+              path: '/other/page1',
               name: 'page1',
               label: '页面1',
               icon: 'setting',
@@ -97,7 +97,7 @@ export default {
     }
   },
   components: {
-    MultiMenu // 注册多级
+    MultiMenu // 注册多级菜单组件
   },
   computed: {
     isCollapse() {

@@ -4,7 +4,7 @@ export default {
     getHomeData: () => {
         return {
             code:200,
-            msg: "hello world"
+            msg: "\"hello world\" from back-end"
         }
     }
 }

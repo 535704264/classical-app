@@ -6,9 +6,16 @@
       <el-button style="margin-right: 20px" @click="handleMenu" icon="el-icon-menu" size="mini"></el-button>
       <!--  面包屑区域（无标签版，顶上的文字版）-->
       <el-breadcrumb separator="/">
-        <el-breadcrumb-item v-for="item in breadCrumbList" :key="item.path" :to="{ path: item.path}" >{{ item.name }}
+        <el-breadcrumb-item v-for="item in tags" :key="item.path" :to="{ path: item.path}" >{{ item.label }}
         </el-breadcrumb-item>
+
       </el-breadcrumb>
+<!--      <el-breadcrumb separator="/">-->
+<!--        <el-breadcrumb-item :to="{ path: '/' }">首页</el-breadcrumb-item>-->
+<!--        <el-breadcrumb-item><a href="/">活动管理</a></el-breadcrumb-item>-->
+<!--        <el-breadcrumb-item>活动列表</el-breadcrumb-item>-->
+<!--        <el-breadcrumb-item>活动详情</el-breadcrumb-item>-->
+<!--      </el-breadcrumb>-->
     </div>
     <!--  头部右边区域   -->
     <div class="r-content">
@@ -26,6 +33,7 @@
   </div>
 </template>
 <script>
+import {mapState} from 'vuex'
 export default {
   data() {
     return {
@@ -42,11 +50,12 @@ export default {
   components: {
   },
   computed: {
-    breadCrumbList() {
-      // 当下匹配的所以路由记录，比如地址是/ware/PurchaseItem → /,/ware,/PurchaseItem 三个
-      // console.log(this.$route.matched);
-      // return this.$route.matched;
-    }
+    // 获取vuex数据的另一种写法
+    ...mapState({
+      // 顶部文字面包屑数据
+      // store 加载在了main.js 中, store的index.js里又引入了tab.js，所以全局状态中有tab的数据
+      tags: state => state.tab.tabList
+    })
   }
 }
 </script>
@@ -66,6 +75,7 @@ export default {
     margin-left: 10px;
   }
 
+  // 顶部右边边区域
   .r-content {
     .user {
       width: 40px;
@@ -74,6 +84,7 @@ export default {
     }
   }
 
+  // 顶部左边边区域
   .l-content {
     display: flex;
     // 上下居中

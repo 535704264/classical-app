@@ -39,6 +39,9 @@ export default {
         // console.log("路径", this.$route.path, item.path )
         this.$router.push(item.path)
       }
+      // 更新面包屑
+      this.$store.commit('selectMenu', item)
+      //
     }
   }
 };
@@ -62,5 +65,7 @@ const props = defineProps( {
 .el-menu--collapse  .el-submenu__title  .el-submenu__icon-arrow{
   display: none;
 }
+
+
 </style>
 
