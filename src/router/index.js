@@ -18,7 +18,7 @@ const routes = [
     // 主路由
     {
         path: '/',
-        component: Main,
+        component: Main, // 页面主体
         children: [
             // 子路由 （/可去掉）
             {path: 'home',component: Home},
