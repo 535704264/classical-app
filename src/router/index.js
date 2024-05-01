@@ -27,9 +27,9 @@ const routes = [
             // 子路由 （/去掉）
             {path: 'home',component: Home}, // 会自动加上/， 菜单数据的path需要加/
             {path: 'user',component: User},
-            {path: 'Attrgroup',component: Attrgroup},
-            {path: 'page1-2',component: PageOneTwo},
-            {path: 'page2',component: PageTwo}
+            {path: 'product/platformAttr/Attrgroup',component: Attrgroup},
+            {path: 'other/page1/page1-2',component: PageOneTwo},
+            {path: 'other/page2',component: PageTwo}
         ]
     }
 ]

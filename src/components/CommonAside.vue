@@ -33,13 +33,13 @@ export default {
           icon: 'goods',
           children: [
             {
-              path: '/platformAttr', // path和路由index.js里面的path对应，path 应该是唯一的
+              path: '/product/platformAttr', // path和路由index.js里面的path对应，path 应该是唯一的
               name: 'platformAttr',
               icon: 'files',
               label: '平台属性',
               children: [
                 {
-                  path: '/Attrgroup',
+                  path: '/product/platformAttr/Attrgroup',
                   name: 'Attrgroup',
                   icon: 'attract',
                   label: '属性分组',
@@ -68,7 +68,7 @@ export default {
               icon: 'setting',
               children: [
                 {
-                  path: '/page1-2', // 动态路由 path → url
+                  path: '/other/page1/page1-2', // 动态路由 path → url
                   name: 'page1-2',
                   label: '页面1-2',
                   icon: 'setting',
@@ -77,7 +77,7 @@ export default {
               ]
             },
             {
-              path: '/page2',
+              path: '/other/page2',
               name: 'page2',
               label: '页面2',
               icon: 'setting',
