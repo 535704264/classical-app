@@ -5,8 +5,11 @@ Vue.use(VueRouter)
 
 // 引入Home.vue, User.vue 组件
 import Main from '../views/Main.vue'
-import Home from '../views/Home.vue'
-import User from '../views/User.vue'
+import Home from '../views/home/Home.vue'
+import User from '../views/user/User.vue'
+import Attrgroup from '../views/product/platformAttr/Attrgroup.vue'
+import PageOneTwo from '../views/other/PageOne-Two.vue'
+import PageTwo from '../views/other/PageTwo.vue'
 
 // 1.创建路由组件
 // 2.将路由和组件进行映射
@@ -18,13 +21,18 @@ const routes = [
     // 主路由
     {
         path: '/',
-        component: Main, // 页面主体
+        component: Main, // 页面主体，这里的配置只是说当点击个菜单主体页面跟着转到那页面
+        redirect: '/home', // 重定向 当 / 挑转 /home
         children: [
-            // 子路由 （/可去掉）
-            {path: 'home',component: Home},
-            {path: 'user',component: User}
+            // 子路由 （/去掉）
+            {path: 'home',component: Home}, // 会自动加上/， 菜单数据的path需要加/
+            {path: 'user',component: User},
+            {path: 'Attrgroup',component: Attrgroup},
+            {path: 'page1-2',component: PageOneTwo},
+            {path: 'page2',component: PageTwo}
         ]
     }
 ]
+
 const route = new VueRouter({routes})
 export default route
