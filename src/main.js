@@ -14,6 +14,9 @@ import router from './router'
 // 浏览器本地存储
 import store from '@/store';
 
+// mockjs
+import './api/mock'
+
 
 // 项目全局都可使用
 new Vue({
