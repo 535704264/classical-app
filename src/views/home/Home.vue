@@ -12,7 +12,6 @@ import {getHomeData} from '@/api'  // @/ → 是src开始
       }
     },
     methods: {
-      // async 异步
        getWelcomeData () {
          getHomeData().then((data)=>{
            this.say = data.data.msg;
