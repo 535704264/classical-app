@@ -6,7 +6,7 @@
       <el-button style="margin-right: 20px" @click="handleMenu" icon="el-icon-menu" size="mini"></el-button>
       <!--  面包屑区域（无标签版，顶上的文字版）-->
       <el-breadcrumb separator="/">
-        <el-breadcrumb-item v-for="item in tags" :key="item.path" :to="{ path: item.path}" >{{ item.label }}
+        <el-breadcrumb-item v-for="item in tags" :key="item.path" :to="{ path: item.path}" >{{ item.meta.title }}
         </el-breadcrumb-item>
 
       </el-breadcrumb>

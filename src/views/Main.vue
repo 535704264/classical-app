@@ -12,7 +12,7 @@
           <common-header/>
         </el-header>
         <el-main>
-          <!-- 子路由出口（动态变更的页面）-->
+          <!-- 主体页面子路由出口（动态变更的页面）-->
           <router-view></router-view>
         </el-main>
       </el-container>

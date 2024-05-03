@@ -9,8 +9,8 @@
           v-if="item.children && item.children.length > 0"
           @click="clickMenu(item)">
         <template slot="title">
-          <i :class="`el-icon-${item.icon}`"></i>
-          <span>{{ item.label }}</span>
+          <i :class="`el-icon-${item.meta.icon}`"></i>
+          <span>{{ item.meta.title }}</span>
         </template>
         <!-- 递归自己调用自己 -->
         <multi-menu :data="item.children"></multi-menu>
@@ -18,8 +18,8 @@
 
       <!-- 情况二：没子集的情况： -->
       <el-menu-item :key="index" v-else :index="item.path" @click="clickMenu(item)">
-        <i :class="`el-icon-${item.icon}`"></i>
-        <span slot="title">{{ item.label }}</span>
+        <i :class="`el-icon-${item.meta.icon}`"></i>
+        <span slot="title">{{ item.meta.title }}</span>
       </el-menu-item>
     </template>
   </div>

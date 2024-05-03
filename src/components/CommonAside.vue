@@ -48,7 +48,7 @@ export default {
     // 总结请求流程： 1. 找api包中定义的后端接口 1.1 如果mock.js 进行了拦截定义 → 找 mockServerData中的方法数据
 
     getMenu().then((data)=>{
-        console.log("首页请求成功",data)
+        //console.log("首页请求成功",data)
         this.menuData = data.data;
     })
 

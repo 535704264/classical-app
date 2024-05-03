@@ -1,5 +1,8 @@
 import Mock from 'mockjs'
 import HomeApi from "./mockServeData/home";
+import MenuApi from "./mockServeData/menu";
+
+// 当与后天真实数据连接时，注释掉Mock接口便可
 
 // 此文件 定义mock 请求拦截，模拟假数据，和mockServeData中的方法相一致
 // 这里定义了接口拦截后返回怎样的mock数据
@@ -14,4 +17,4 @@ import HomeApi from "./mockServeData/home";
 // 2.mock 方法数据分离版
 Mock.mock('/api/home/gateData', HomeApi.getFakeHomeData())
 
-Mock.mock('/api/home/getMenu', HomeApi.getForgedMenu())
+Mock.mock('/api/user/getMenu', MenuApi.getForgedMenu())
